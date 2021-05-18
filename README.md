@@ -22,4 +22,4 @@ Upon registering and gaining access, this web application will allow Users to lo
 
 
 
-[Database Diagram](Game Tracker Database Diagram.pdf) <br />
+[Database Diagram](https://github.com/joshapplegarth/GameTracker/blob/master/Game%20Tracker%20Database%20Diagram.pdf) <br />
