@@ -1,0 +1,83 @@
+﻿@model Location
+@using Game = GameTracker.Models.Game
+
+
+
+<fieldset class="border d-inline-block mb-3 mr-4 p-3 pt-0 shadow align-top">
+    <h1> Location Details </h1>
+    <table>
+        <tbody>
+            <tr>
+                <th class="pr-1 text-right"> City: </th>
+                <td class="pl-1"> @Model.City </td>
+            </tr>
+            <tr>
+                <th class="pr-1 text-right"> State: </th>
+                <td class="pl-1"> @Model.State </td>
+            </tr>
+            <tr>
+                <th class="pr-1 text-right"> Land Owner: </th>
+                <td class="pl-1"> @Model.LandOwner </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">
+                    <hr />
+                </td>
+            </tr>
+            <tr>
+                <td class="text-center" colspan="2">
+                    <a asp-controller="Location" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-outline-warning mr-1 text-dark"> Edit </a>
+                    <a asp-controller="Location" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-sm btn-outline-danger ml-1 mr-1"> Delete </a>
+                    <a asp-controller="Location" asp-action="Index" class="btn btn-sm btn-outline-primary ml-1"> Cancel </a>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</fieldset>
+
+<fieldset class="border d-inline-block mb-3 mr-4 p-3 pt-0 shadow align-center">
+    <h1> Games Taken  </h1>
+    <table>
+        <thead>
+            <tr>
+                <th align="left"> Id </th>
+                <th align="left"> Type </th>
+                <th align="left"> Gender </th>
+                <th align="left"> Weight </th>
+                <th align="left"> Date </th>
+                <th align="left"> Details </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Game g in Model.Game)
+            {
+                <tr>
+                    <td>               @g.Id         </td>
+                    <td>               @g.Type         </td>
+                    <td>               @g.Gender       </td>
+                    <td>               @g.Weight       </td>
+                    <td>               @g.Date       </td>
+
+                    <td align="left">
+                        <a asp-controller="Game" asp-action="Details" asp-route-id="@g.Id" class="btn btn-sm btn-outline-primary ml-1"> Game Details</a>
+                    </td>
+                    
+                </tr>
+               
+            }
+        </tbody>
+        
+        <tfoot>
+            <tr>
+
+                <td colspan="6">
+                    <hr />
+                    <a asp-controller="Game" asp-action="Add" asp-route-locationId="@Model.Id" class="btn btn-sm btn-secondary"> Add New Game </a>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+</fieldset>

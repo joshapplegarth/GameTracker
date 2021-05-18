@@ -1,0 +1,40 @@
+﻿@model IQueryable<User>
+
+<!DOCTYPE html>
+<link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title> Users </title>
+    <link href="~/Styles.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <h2> All Users </h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th align="left"> Id </th>
+                <th align="left"> First Name </th>
+                <th align="left"> Last Name </th>
+                <th align="left"> Email </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (User u in Model)
+            {
+            <tr>
+                <td>               @u.Id         </td>
+                <td>               @u.Firstname         </td>
+                <td>               @u.Lastname       </td>
+                <td align="right"> @u.Email </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
+<a asp-controller="User" asp-action="Add" class="btn btn-sm btn-secondary"> Add New User </a>

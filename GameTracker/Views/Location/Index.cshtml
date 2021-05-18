@@ -1,0 +1,39 @@
+﻿@model IQueryable<Location>
+
+<fieldset class="border d-inline-block p-3 shadow">
+    <h1> Locations </h1>
+    <hr />
+    <table>
+        <tbody>
+            @foreach (Location l in Model)
+            {
+                <tr>
+                    <td>
+                       
+                        @l.City
+                        @l.State
+                        @l.LandOwner
+                    </td>
+                    <td>
+                        <a asp-controller="Location" asp-action="Details" asp-route-id="@l.Id" class="btn btn-sm btn-outline-primary">
+                            Details
+                        </a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td class="text-center" colspan="2">
+                    <a asp-controller="Location" asp-action="Add" class="btn btn-sm btn-secondary"> Add A New Location </a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</fieldset>

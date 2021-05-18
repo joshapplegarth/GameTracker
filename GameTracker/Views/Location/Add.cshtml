@@ -1,0 +1,44 @@
+﻿@model Location
+
+    <fieldset class="border d-inline-block p-3 shadow">
+        <h1> Add New Location</h1>
+        <form method="post">
+            <table>
+                @if (ViewData.ModelState.ErrorCount > 0)
+                {
+                    <thead>
+                        <tr>
+                            <td colspan="2">
+                                <div asp-validation-summary="All" class="text-danger"> </div>
+                            </td>
+                        </tr>
+
+                        <tr> <td class="pl-2 pr-2" colspan="2"> <hr /> </td> </tr>
+                    </thead>
+                }
+                <tbody>
+                    <tr>
+                        <th class="pr-1 text-right"> City: </th>
+                        <td><input asp-for="City" class="rounded" required /></td>
+                    </tr>
+                    <tr>
+                        <th class="pr-1 text-right"> State: </th>
+                        <td><input asp-for="State" class="rounded" required /></td>
+                    </tr>
+                    <tr>
+                        <th class="pr-1 text-right"> Land Owner: </th>
+                        <td><input asp-for="LandOwner" class="rounded" required /></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr> <td class="pl-2 pr-2" colspan="2"> <hr /> </td> </tr>
+                    <tr>
+                        <td class="text-center" colspan="2">
+                            <input type="submit" value="Add Location" class="btn btn-sm btn-success mr-1" />
+                            <a asp-controller="Location" asp-action="Index" class="btn btn-sm btn-outline-primary ml-1"> Cancel </a>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </form>
+    </fieldset>

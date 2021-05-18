@@ -1,0 +1,51 @@
+﻿@model Game
+
+<fieldset class="border d-inline-block mb-3 mr-4 p-3 pt-0 shadow align-top">
+    <h1> Delete Fillup </h1>
+    <table>
+        <tbody>
+            <tr>
+                <th class="pr-1 text-right"> Type: </th>
+                <td class="pl-1"> @Model.Type </td>
+            </tr>
+            <tr>
+                <th class="pr-1 text-right"> Gender: </th>
+                <td class="pl-1"> @Model.Gender </td>
+            </tr>
+            <tr>
+                <th class="pr-1 text-right"> Weight: </th>
+                <td class="pl-1"> @Model.Weight.ToString() </td>
+            </tr>
+            <tr>
+                <th class="pr-1 text-right"> Date: </th>
+                <td class="pl-1"> @Model.Date </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">
+                    <hr />
+                </td>
+            </tr>
+            <tr>
+                <td class="text-center" colspan="2">
+                    <span class="bg-warning text-center text-danger pl-2 pr-2"> Are You Sure You Want To Delete? </span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <hr />
+                </td>
+            </tr>
+            <tr>
+                <td class="text-center" colspan="2">
+                    <form method="post">
+                        <input type="hidden" asp-for="Id" />
+                        <input type="submit" value="Delete Game" class="btn btn-sm btn-outline-danger mr-1" />
+                        <a asp-controller="Game" asp-action="Details" asp-route-id="@Model.Id" class="btn btn-sm btn-outline-primary ml-1"> Cancel </a>
+                    </form>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</fieldset>

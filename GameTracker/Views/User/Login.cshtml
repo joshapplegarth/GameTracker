@@ -1,0 +1,16 @@
+﻿@model User
+
+<fieldset class="border d-inline-block p-3 shadow">
+    <h1> Login </h1>
+    <hr />
+    <form method="post">
+        Email:
+        <input asp-for="Email" placeholder="EMail Address" required />
+        <br />
+        Password:
+        <input asp-for="Password" placeholder="Password" required />
+        <br />
+        <input type="Submit" value="Login" class="btn btn-sm btn-secondary" />
+    </form>
+</fieldset>
+

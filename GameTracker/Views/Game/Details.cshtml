@@ -1,0 +1,45 @@
+﻿@model Game
+
+<fieldset class="border d-inline-block mb-3 mr-4 p-3 pt-0 shadow align-top">
+    <h1> Game Details </h1>
+    <table>
+        <tbody>
+            <tr>
+                <th class="pr-1 text-right"> Type: </th>
+                <td class="pl-1"> @Model.Type </td>
+            </tr>
+            <tr>
+                <th class="pr-1 text-right"> Gender: </th>
+                <td class="pl-1"> @Model.Gender </td>
+            </tr>
+            <tr>
+                <th class="pr-1 text-right"> Weight: </th>
+                <td class="pl-1"> @Model.Weight.ToString() </td>
+            </tr>
+            <tr>
+                <th class="pr-1 text-right"> Date: </th>
+                <td class="pl-1"> @Model.Date </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">
+                    <hr />
+                </td>
+            </tr>
+            <tr>
+                <td class="text-center" colspan="2">
+                    <a asp-controller="Game" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-outline-warning mr-1 text-dark">
+                        Edit
+                    </a>
+                    <a asp-controller="Game" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-sm btn-outline-danger ml-1 mr-1">
+                        Delete
+                    </a>
+                    <a asp-controller="Location" asp-action="Details" asp-route-id="@Model.LocationId" class="btn btn-sm btn-outline-primary ml-1">
+                        Back
+                    </a>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</fieldset>

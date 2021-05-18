@@ -1,0 +1,26 @@
+﻿@model User
+
+<h1> Add New User</h1>
+<link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+<form method="post">
+    <div asp-validation-summary="All"></div>
+    @*
+        UserId:
+        <input asp-for="Id" />
+        <br />
+    *@
+    First Name:
+    <input asp-for="Firstname" />
+    <br />
+    Last Name:
+    <input asp-for="Lastname" />
+    <br />
+    Email:
+    <input asp-for="Email" />
+    <br />
+    Password:
+    <input asp-for="Password" />
+    <br />
+    <input type="submit" value="Add User" class="btn btn-sm btn-success" />
+    <a asp-controller="User" asp-action="Index" class="btn btn-sm btn-secondary"> Cancel </a>
+</form>

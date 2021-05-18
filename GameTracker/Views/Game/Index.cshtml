@@ -1,0 +1,40 @@
+﻿@model IQueryable<Game>
+
+<fieldset class="border d-inline-block p-3 shadow">
+    <h1> Games </h1>
+    <hr />
+    <table>
+        <tbody>
+            @foreach (Game g in Model)
+            {
+                <tr>
+                    <td>
+
+                        @g.Type
+                        @g.Gender
+                        @g.Weight
+                        @g.Date
+                    </td>
+                    <td>
+                        <a asp-controller="Game" asp-action="Details" asp-route-id="@g.Id" class="btn btn-sm btn-outline-primary">
+                            Details
+                        </a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td class="text-center" colspan="2">
+                    <a asp-controller="Game" asp-action="Add" class="btn btn-sm btn-secondary"> Add A New Game </a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</fieldset>

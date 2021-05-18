@@ -1,0 +1,42 @@
+﻿@model Location
+
+<fieldset class="border d-inline-block p-3 shadow">
+    <h1> Delete Location</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th class="pr-1 text-right"> City: </th>
+                <td><input asp-for="City" class="rounded" /></td>
+            </tr>
+            <tr>
+                <th class="pr-1 text-right"> State: </th>
+                <td><input asp-for="State" class="rounded" /></td>
+            </tr>
+            <tr>
+                <th class="pr-1 text-right"> Land Owner: </th>
+                <td><input asp-for="LandOwner" class="rounded" /></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr> <td class="pl-2 pr-2" colspan="2"> <hr /> </td> </tr>
+            <tr>
+                <td class="text-center" colspan="2">
+                    <span class="bg-warning text-center text-danger pl-2 pr-2"> Are You Sure? </span>
+                </td>
+            </tr>
+            <tr> <td class="pl-2 pr-2" colspan="2"> <hr /> </td> </tr>
+            <tr>
+                <td>
+                    <form method="post">
+                        <input type="hidden" asp-for="Id" />
+                        <input type="submit" value="Delete Location" class="btn btn-sm btn-warning">
+                        <a asp-controller="Location" asp-action="Details" class="btn btn-sm btn-success"> Cancel </a>
+                    </form>
+                </td>
+            </tr>
+            
+        </tfoot>
+    </table>
+</fieldset>
+

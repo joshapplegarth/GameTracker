@@ -1,0 +1,21 @@
+﻿@model User
+
+<h1> Delete User </h1>
+<link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+<form method="post">
+    First Name:
+    <input asp-for="Firstname" />
+    <br />
+    Last Name:
+    <input asp-for="Lastname" />
+    <br />
+    Email:
+    <input asp-for="Email" />
+    <br />
+
+    <h4> Are you sure you want to delete this User? </h4>
+
+    <input type="hidden" asp-for="Id" />
+    <input type="Submit" value="Delete" class="btn btn-sm btn-warning">
+    <a asp-controller="User" asp-action="Index" class="btn btn-sm btn-success"> Cancel </a>
+</form>
