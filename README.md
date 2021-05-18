@@ -22,4 +22,4 @@ Upon registering and gaining access, this web application will allow Users to lo
 
 
 
-[Database Diagram](Game_Tracker_Database_Diagram.pdf) <br />
+[Database Diagram](Game Tracker Database Diagram.pdf) <br />
